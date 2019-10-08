@@ -16,10 +16,14 @@ export function reducer(state, action) {
 				completed: false,
 				id: Date.now()
 			};
+		case "CLEAR_COMPLETED":
+			const clearTodo = {};
 
 			return {
 				...state,
 				todos: [...state.todos, newTodo]
 			};
+		default:
+			return state;
 	}
 }

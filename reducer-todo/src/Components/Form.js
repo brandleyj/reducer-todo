@@ -7,8 +7,13 @@ function Form({ dispatch }) {
 		setTodo(e.target.value);
 	};
 
+	const handleSubmit = e => {
+		e.preventDefault();
+		dispatch({ type: "ADD_TODO", payload: todo });
+	};
+
 	return (
-		<form onSubmit={() => dispatch({ type: "ADD_TODO", payload: todo })}>
+		<form onSubmit={handleSubmit}>
 			<input type="text" name="task" value={todo} onChange={handleChanges} />
 			<button type="submit">Add</button>
 		</form>
