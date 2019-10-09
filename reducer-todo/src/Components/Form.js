@@ -10,6 +10,7 @@ function Form({ dispatch }) {
 	const handleSubmit = e => {
 		e.preventDefault();
 		dispatch({ type: "ADD_TODO", payload: todo });
+		setTodo("");
 	};
 
 	return (
